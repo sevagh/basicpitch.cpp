@@ -15,7 +15,7 @@ add_definitions(-DLIBREMIDI_HEADER_ONLY=1)
 #add_definitions(-DORT_NO_EXCEPTIONS=1)
 
 # Define the path to the compiled ONNX Runtime static library
-set(ONNX_RUNTIME_LIB ${CMAKE_SOURCE_DIR}/../build-ort/MinSizeRel/libonnxruntime.so)
+set(ONNX_RUNTIME_LIB ${CMAKE_SOURCE_DIR}/../build/build-ort-linux/MinSizeRel/libonnxruntime.so)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../vendor/onnxruntime/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../ort-model/model)

@@ -15,7 +15,7 @@ add_definitions(-DLIBREMIDI_HEADER_ONLY=1 -DLIBREMIDI_EMSCRIPTEN=1)
 add_definitions(-DORT_NO_EXCEPTIONS=1)
 
 # Define the path to the compiled ONNX Runtime static library
-set(ONNX_RUNTIME_WASM_LIB ${CMAKE_SOURCE_DIR}/../build-wasm-ort/MinSizeRel/libonnxruntime_webassembly.a)
+set(ONNX_RUNTIME_WASM_LIB ${CMAKE_SOURCE_DIR}/../build/build-ort-wasm/MinSizeRel/libonnxruntime_webassembly.a)
 
 if(NOT EMSCRIPTEN)
     message(FATAL_ERROR "Only Emscripten build target is supported")

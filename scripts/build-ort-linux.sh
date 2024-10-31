@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# copied from <https://github.com/olilarkin/ort-builder>
+
 ONNX_CONFIG="${1:-./ort-model/model.required_operators_and_types.config}"
 CMAKE_BUILD_TYPE=MinSizeRel
 
@@ -8,7 +10,7 @@ build_arch() {
   ARCH="$2"
 
   python ./vendor/onnxruntime/tools/ci_build/build.py \
-  --build_dir "./build-ort" \
+  --build_dir "./build/build-ort-linux" \
   --config=${CMAKE_BUILD_TYPE} \
   --build_shared_lib \
   --parallel \
