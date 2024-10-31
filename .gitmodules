@@ -1,0 +1,18 @@
+[submodule "vendor/basic-pitch"]
+	path = vendor/basic-pitch
+	url = https://github.com/spotify/basic-pitch
+[submodule "vendor/onnxruntime"]
+	path = vendor/onnxruntime
+	url = https://github.com/microsoft/onnxruntime
+[submodule "vendor/libnyquist"]
+	path = vendor/libnyquist
+	url = git@github.com:ddiakopoulos/libnyquist
+[submodule "vendor/ort-builder"]
+	path = vendor/ort-builder
+	url = git@github.com:olilarkin/ort-builder
+[submodule "vendor/libremidi"]
+	path = vendor/libremidi
+	url = git@github.com:celtera/libremidi.git
+[submodule "vendor/eigen"]
+	path = vendor/eigen
+	url = https://gitlab.com/libeigen/eigen.git
