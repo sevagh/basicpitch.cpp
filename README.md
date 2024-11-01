@@ -77,14 +77,15 @@ Clone the repo with submodules:
 $ git clone --recurse-submodules https://github.com/sevagh/demucs.cpp
 ```
 
-Create a Python venv (or conda env) and install the requirements:
+Create and activate a Python venv (or conda env) and install the requirements:
 ```
+$ python -m venv my-env
+$ source my-env/bin/activate
 $ pip install -r ./scripts/requirements.txt
 ```
 
-Activate your venv and run the ONNXRuntime builder scripts:
+Run the ONNXRuntime builder scripts:
 ```
-$ activate my-env
 $ ./scripts/build-ort-linux.sh
 $ ./scripts/build-ort-wasm.sh
 ```

@@ -1,5 +1,3 @@
-EMSDK_ENV_PATH?=/home/sevagh/repos/emsdk/emsdk_env.sh
-
 default: cli
 
 cli:
@@ -11,7 +9,11 @@ cli-debug:
 	cmake --build build/build-cli -- -j16
 
 wasm:
-	@/bin/bash -c 'source $(EMSDK_ENV_PATH) && \
+	@if [ -z "$$EMSDK" ]; then \
+		echo "Error: EMSDK environment variable is not set. Please install and activate emsdk first."; \
+		exit 1; \
+	fi
+	@/bin/bash -c 'source "$$EMSDK/emsdk_env.sh" && \
 		emcmake cmake -S src_wasm -B build/build-wasm -DCMAKE_BUILD_TYPE=Release \
 		&& cmake --build build/build-wasm -- -j16'
 

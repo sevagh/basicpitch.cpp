@@ -6,3 +6,5 @@ build*/
 /__pycache__
 *.pyc
 *.csv
+*.a
+venv
