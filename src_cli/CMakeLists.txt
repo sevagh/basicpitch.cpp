@@ -23,6 +23,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../vendor/eigen)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../vendor/oboe-resampler)
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../vendor/libnyquist ${CMAKE_BINARY_DIR}/libnyquist)
+
 file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../src/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/../src_cli/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/../ort-model/model/model.ort.c" "${CMAKE_CURRENT_SOURCE_DIR}/../vendor/oboe-resampler/*.cpp")
 add_executable(basicpitch ${SOURCES})
 
@@ -30,7 +32,7 @@ add_executable(basicpitch ${SOURCES})
 # use target_include_directories to treat it like a system library to  ignore warnings
 target_include_directories(basicpitch SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/libremidi/include)
 
-target_link_libraries(basicpitch ${ONNX_RUNTIME_LIB} libnyquist)
+target_link_libraries(basicpitch ${ONNX_RUNTIME_LIB} libnyquist::libnyquist)
 target_compile_definitions(basicpitch PRIVATE LIBREMIDI_HEADER_ONLY=1)
 
 file(GLOB SOURCES_TO_LINT "${CMAKE_CURRENT_SOURCE_DIR}/../src/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/../src/*.hpp" "${CMAKE_CURRENT_SOURCE_DIR}/../src_wasm/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/../src_cli/*.cpp")
